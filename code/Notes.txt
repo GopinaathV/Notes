@@ -1,0 +1,12 @@
+Issues faced on stream data processing
+1. Back pressure
+      - Frequency of data arrival is very high. System has to process the input data quickly.
+      - Code cleanup and start-up time for the next iteration
+2. Managing Checkpoints
+      - In stream processing it can scan the entire historical data. 
+        So whenever input data is read it's stored in metadata marking it as execution completed  
+      - System should be resilent enough to manage this checkpoints. Incase of failure reads system should again process the failed data
+3. Late arriving data
+      - There is possibility of receiving data after the iteration. 
+        Bcuz of that computation at the end is affected. System should be resilient enough to handle Late arriving data
+ 
